@@ -13,92 +13,92 @@ const index = () => {
       <View>
         <ContainerButtons>
           <Button
-            color={secondaryColors.gray}
             text="C"
-            textColor={primaryColors.black}
-          />
-          <Button
             color={secondaryColors.gray}
-            text="/"
             textColor={primaryColors.black}
           />
           <Button
+            text="+/-"
             color={secondaryColors.gray}
-            text="/"
             textColor={primaryColors.black}
           />
           <Button
-            color={secondaryColors.buttercup}
+            text="del"
+            color={secondaryColors.gray}
+            textColor={primaryColors.black}
+          />
+          <Button
             text="/"
+            color={secondaryColors.pricot}
             textColor={primaryColors.white}
           />
         </ContainerButtons>
 
         <ContainerButtons>
           <Button
-            color={secondaryColors.tuatara}
             text="7"
+            color={secondaryColors.eastBay}
             textColor={primaryColors.white}
           />
           <Button
-            color={secondaryColors.tuatara}
             text="8"
+            color={secondaryColors.eastBay}
             textColor={primaryColors.white}
           />
           <Button
-            color={secondaryColors.tuatara}
             text="9"
+            color={secondaryColors.eastBay}
             textColor={primaryColors.white}
           />
           <Button
-            color={secondaryColors.buttercup}
             text="X"
+            color={secondaryColors.pricot}
             textColor={primaryColors.white}
           />
         </ContainerButtons>
 
         <ContainerButtons>
           <Button
-            color={secondaryColors.tuatara}
             text="4"
+            color={secondaryColors.eastBay}
             textColor={primaryColors.white}
           />
           <Button
-            color={secondaryColors.tuatara}
             text="5"
+            color={secondaryColors.eastBay}
             textColor={primaryColors.white}
           />
           <Button
-            color={secondaryColors.tuatara}
             text="6"
+            color={secondaryColors.eastBay}
             textColor={primaryColors.white}
           />
           <Button
-            color={secondaryColors.buttercup}
             text="-"
+            color={secondaryColors.pricot}
             textColor={primaryColors.white}
           />
         </ContainerButtons>
 
         <ContainerButtons>
           <Button
-            color={secondaryColors.tuatara}
             text="1"
+            color={secondaryColors.eastBay}
             textColor={primaryColors.white}
           />
           <Button
-            color={secondaryColors.tuatara}
             text="2"
+            color={secondaryColors.eastBay}
             textColor={primaryColors.white}
           />
           <Button
-            color={secondaryColors.tuatara}
             text="3"
+            color={secondaryColors.eastBay}
             textColor={primaryColors.white}
           />
           <Button
-            color={secondaryColors.buttercup}
             text="-"
+            color={secondaryColors.pricot}
             textColor={primaryColors.white}
           />
         </ContainerButtons>

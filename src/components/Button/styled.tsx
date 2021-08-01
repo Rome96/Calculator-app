@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
-
 interface ContainerButton {
-  color: string;
+  color?: string;
 }
 
 interface TextButton {
@@ -10,10 +9,11 @@ interface TextButton {
 
 const ContainerButton = styled.TouchableOpacity<ContainerButton>`
   background: ${({color}) => color};
-  height: 60px;
-  width: 60px;
+  height: 65px;
+  width: 65px;
   border-radius: 100px;
   justify-content: center;
+  margin: 0 15px;
 `;
 
 const TextButton = styled.Text<TextButton>`

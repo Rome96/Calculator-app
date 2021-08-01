@@ -20,9 +20,11 @@ const ResultSmall = styled(Result)`
 `;
 
 const ContainerButtons = styled.View`
-  padding: 5px 0px;
+  margin: 10px 0px;
+  padding: 0px 10px;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
 `;
 
 export {Container, Result, ResultSmall, ContainerButtons};

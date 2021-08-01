@@ -2,7 +2,7 @@ import React from 'react';
 import {ContainerButton, TextButton} from './styled';
 
 interface Props {
-  color: string;
+  color?: string;
   text: string;
   textColor: string;
 }

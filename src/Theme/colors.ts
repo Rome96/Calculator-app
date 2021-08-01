@@ -5,7 +5,7 @@ export const primaryColors = {
 
 export const secondaryColors = {
   grayOpacity: 'rgba(255, 255, 255, 0.5)',
-  gray: '#A5A3A5',
-  buttercup: '#F6A00E',
-  tuatara: '#323130',
+  gray: '#F8E2CF',
+  pricot: '#DF5E5E',
+  eastBay: '#47597E',
 };
