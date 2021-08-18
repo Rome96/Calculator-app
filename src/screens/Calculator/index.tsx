@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {View} from 'react-native';
 
 import Button from '../../components/Button';
@@ -6,14 +6,21 @@ import {primaryColors, secondaryColors} from '../../Theme/colors';
 import {Container, ContainerButtons, Result, ResultSmall} from './styles';
 
 const index = () => {
+  const [number, setNumber] = useState('100');
+
+  const clear = () => {
+    setNumber('0');
+  };
+
   return (
     <Container>
       <ResultSmall>1,500.000</ResultSmall>
-      <Result>2,456.000</Result>
+      <Result>{number}</Result>
       <View>
         <ContainerButtons>
           <Button
             text="C"
+            onPress={clear}
             color={secondaryColors.gray}
             textColor={primaryColors.black}
           />
@@ -97,7 +104,26 @@ const index = () => {
             textColor={primaryColors.white}
           />
           <Button
-            text="-"
+            text="+"
+            color={secondaryColors.pricot}
+            textColor={primaryColors.white}
+          />
+        </ContainerButtons>
+
+        <ContainerButtons>
+          <Button
+            broad
+            text="0"
+            color={secondaryColors.eastBay}
+            textColor={primaryColors.white}
+          />
+          <Button
+            text="."
+            color={secondaryColors.eastBay}
+            textColor={primaryColors.white}
+          />
+          <Button
+            text="="
             color={secondaryColors.pricot}
             textColor={primaryColors.white}
           />
