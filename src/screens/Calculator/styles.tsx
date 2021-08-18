@@ -4,7 +4,7 @@ import {primaryColors, secondaryColors} from '../../Theme/colors';
 const Container = styled.View`
   flex: 1;
   background: ${primaryColors.black};
-  padding: 20px;
+  padding: 30px;
   justify-content: flex-end;
 `;
 
@@ -12,6 +12,7 @@ const Result = styled.Text`
   font-size: 40px;
   color: ${primaryColors.white};
   text-align: right;
+  margin-bottom: 10px;
 `;
 
 const ResultSmall = styled(Result)`

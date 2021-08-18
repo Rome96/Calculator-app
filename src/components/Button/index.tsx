@@ -6,13 +6,13 @@ interface Props {
   text: string;
   textColor: string;
   broad?: boolean;
-  onPress?: () => void;
+  onPress: (numberText: string) => void;
 }
 
 const index = (props: Props) => {
   const {color, text, textColor, broad, onPress} = props;
   return (
-    <ContainerButton color={color} broad={broad} onPress={onPress}>
+    <ContainerButton color={color} broad={broad} onPress={() => onPress(text)}>
       <TextButton textColor={textColor}>{text}</TextButton>
     </ContainerButton>
   );
