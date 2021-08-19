@@ -14,7 +14,29 @@ const index = () => {
   };
 
   const buildNumer = (numberText: string) => {
-    setNumber(number + numberText);
+
+    //no aceptar doble punto:
+    if (number.includes('.') && numberText === '.') return;
+
+    //validar si el numero empieza con 0 o -0
+    if (number.startsWith('0') || number.startsWith('-0')) {
+
+      //validar si es el primer punto decimal
+      if (numberText === '.') {
+        setNumber(number + numberText);
+      } else if (numberText === '0' && number.includes('.')) { // evaluar si es otro 0 y hay un punto'.'
+        setNumber(number + numberText);
+      } else if (numberText !== '0' && !number.includes('.')) { // evaluar si es diferente de 0 y no tiene un punto '.'
+        setNumber(numberText)
+      } else if (numberText === '0' && !number.includes('.')) { // Evitar el 0000.0
+        setNumber(number)
+      } else {
+        setNumber(number + numberText);
+      }
+
+    } else {
+      setNumber(number + numberText);
+    }
   };
 
   const positiveAndNegatve = () => {
