@@ -17,6 +17,14 @@ const index = () => {
     setNumber(number + numberText);
   };
 
+  const positiveAndNegatve = () => {
+    if (number.includes('-')) {
+      setNumber(number.replace('-', ''))
+    } else {
+      setNumber('-' + number )
+    }
+  };
+
   return (
     <Container>
       <ResultSmall>{previousNumber}</ResultSmall>
@@ -33,7 +41,7 @@ const index = () => {
           />
           <Button
             text="+/-"
-            onPress={clear}
+            onPress={positiveAndNegatve}
             color={secondaryColors.gray}
             textColor={primaryColors.black}
           />
