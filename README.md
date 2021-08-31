@@ -17,8 +17,8 @@ o
 ### `npx react-native run-android`
 
 
-![Form](https://github.com/Rome96/Calculator-app/master/src/assets/images/1.png)
-![Form](https://github.com/Rome96/Calculator-app/master/src/assets/images/3.png)
-![Form](https://github.com/Rome96/Calculator-app/master/src/assets/images/3.png)
+![Form](https://github.com/Rome96/Calculator-app/blob/master/src/assets/1.png)
+![Form](https://github.com/Rome96/Calculator-app/blob/master/src/assets/2.png)
+![Form](https://github.com/Rome96/Calculator-app/blob/master/src/assets/3.png)
 
 
