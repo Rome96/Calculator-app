@@ -1,16 +1,26 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {View} from 'react-native';
 
 import Button from '../../components/Button';
 import {primaryColors, secondaryColors} from '../../Theme/colors';
 import {Container, ContainerButtons, Result, ResultSmall} from './styles';
 
+enum Operadors {
+  sumar,
+  restar,
+  multiplicar,
+  dividir,
+}
+
 const index = () => {
   const [number, setNumber] = useState('100');
   const [previousNumber, setPreviousNumber] = useState('0');
 
+  const endOperations = useRef<Operadores>();
+
   const clear = () => {
     setNumber('0');
+    setPreviousNumber('0');
   };
 
   const buildNumer = (numberText: string) => {
@@ -61,9 +71,39 @@ const index = () => {
     }
   };
 
+  const changeNumBefore = () => {
+    if (number.endsWith('.')) {
+      // termina con
+      setPreviousNumber(number.slice(0, -1));
+    } else {
+      setPreviousNumber(number);
+    }
+    setNumber('0');
+  };
+
+  const btnDivide = () => {
+    changeNumBefore();
+    endOperations.current = Operadors.dividir;
+  };
+
+  const btnMultiplicar = () => {
+    changeNumBefore();
+    endOperations.current = Operadors.multiplicar;
+  };
+
+  const btnRestar = () => {
+    changeNumBefore();
+    endOperations.current = Operadors.restar;
+  };
+
+  const btnSumar = () => {
+    changeNumBefore();
+    endOperations.current = Operadors.sumar;
+  };
+
   return (
     <Container>
-      <ResultSmall>{previousNumber}</ResultSmall>
+      {previousNumber !== '0' && <ResultSmall>{previousNumber}</ResultSmall>}
       <Result numberOfLines={1} adjustsFontSizeToFit>
         {number}
       </Result>
@@ -89,7 +129,7 @@ const index = () => {
           />
           <Button
             text="/"
-            onPress={clear}
+            onPress={btnDivide}
             color={secondaryColors.pricot}
             textColor={primaryColors.white}
           />
@@ -116,7 +156,7 @@ const index = () => {
           />
           <Button
             text="X"
-            onPress={clear}
+            onPress={btnMultiplicar}
             color={secondaryColors.pricot}
             textColor={primaryColors.white}
           />
@@ -143,7 +183,7 @@ const index = () => {
           />
           <Button
             text="-"
-            onPress={clear}
+            onPress={btnRestar}
             color={secondaryColors.pricot}
             textColor={primaryColors.white}
           />
@@ -170,7 +210,7 @@ const index = () => {
           />
           <Button
             text="+"
-            onPress={clear}
+            onPress={btnSumar}
             color={secondaryColors.pricot}
             textColor={primaryColors.white}
           />

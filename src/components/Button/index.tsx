@@ -12,7 +12,11 @@ interface Props {
 const index = (props: Props) => {
   const {color, text, textColor, broad, onPress} = props;
   return (
-    <ContainerButton color={color} broad={broad} onPress={() => onPress(text)}>
+    <ContainerButton
+      color={color}
+      broad={broad}
+      activeOpacity={0.7}
+      onPress={() => onPress(text)}>
       <TextButton textColor={textColor}>{text}</TextButton>
     </ContainerButton>
   );
