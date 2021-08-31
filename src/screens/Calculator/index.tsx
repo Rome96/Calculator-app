@@ -16,7 +16,7 @@ const index = () => {
   const [number, setNumber] = useState('100');
   const [previousNumber, setPreviousNumber] = useState('0');
 
-  const endOperations = useRef<Operadores>();
+  const endOperations = useRef<Operadors>();
 
   const clear = () => {
     setNumber('0');
@@ -99,6 +99,28 @@ const index = () => {
   const btnSumar = () => {
     changeNumBefore();
     endOperations.current = Operadors.sumar;
+  };
+
+  const calculate = () => {
+    const num1 = Number(number);
+    const num2 = Number(previousNumber);
+
+    switch (endOperations.current) {
+      case Operadors.dividir:
+        setNumber(`${num2 / num1}`);
+        break;
+      case Operadors.multiplicar:
+        setNumber(`${num1 * num2}`);
+        break;
+      case Operadors.restar:
+        setNumber(`${num2 - num1}`);
+        break;
+      case Operadors.sumar:
+        setNumber(`${num1 + num2}`);
+        break;
+    }
+
+    setPreviousNumber('0');
   };
 
   return (
@@ -232,7 +254,7 @@ const index = () => {
           />
           <Button
             text="="
-            onPress={clear}
+            onPress={calculate}
             color={secondaryColors.pricot}
             textColor={primaryColors.white}
           />
